@@ -32,12 +32,12 @@ class circle():
         else:
             if self.x + self.r >= width:
                 widthExcess = True
-                w = round((width - (self.x - self.r))/height, 6)
+                w = round((width - (self.x - self.r))/width, 6)
                 xb = round(((self.x - self.r) + width)/(2*width), 6)
             else:
                 widthExcess = False
                 w = round((2*self.r)/width, 6)
-                xb = round((self.x)/(width), 6)
+                xb = round((self.x + 1)/(width), 6)
                 
         if self.y - self.r < 0:
             heightExcess = True
@@ -55,7 +55,7 @@ class circle():
             else:
                 heightExcess = False
                 h = round((2*self.r)/height, 6)
-                yb = round((self.y)/(height), 6)
+                yb = round((self.y + 1)/(height), 6)
                 
         if heightExcess or widthExcess:
             classification = 1
