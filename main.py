@@ -24,6 +24,11 @@ maxRadius = 30
 
 dir = os.getcwd()
 
+#Creating directories 'labels' and 'images'
+os.mkdir('labels')
+os.mkdir('images')
+print("Made directories.")
+
 #Making the classes file
 classesFile = os.path.join(dir+"/labels", "classes.txt")  
 classes = open(classesFile, "a") 
