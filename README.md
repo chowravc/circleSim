@@ -5,7 +5,7 @@ Python = 3.7.7
 
 numpy = 1.16.5
 
-cv2 = 4.2.0
+opencv = 4.2.0
 
 
 Create a new conda environment, install requirements with conda and run main.ipynb with jupyter notebook.
