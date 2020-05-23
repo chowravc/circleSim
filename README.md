@@ -8,4 +8,4 @@ numpy = 1.16.5
 cv2 = 4.2.0
 
 
-Create a new conda environment, install requirements with conda and run main.ipynb with jupyter notebook.
+Create a new conda environment, run conda install -c conda-forge opencv and install requirements with pip install -r requirements.txt
