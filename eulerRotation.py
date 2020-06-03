@@ -17,6 +17,18 @@ def createRotation(theta):
     R = np.dot(R_z, np.dot(R_y, R_x ))
     return R
 
+# Rotates an object as arrays of x, y and z using euler angles theta, a list of 3 angles. Same as rotate but with linear algebra.
+def betterRotate(x, y, z, theta):
+    R = createRotation(theta)
+    coords = [x, y, z]
+    transCoords = np.transpose(coords)
+    
+    rotatedTrans = np.dot(transCoords, R)
+    
+    rotatedPoints = np.transpose(rotatedTrans)
+    
+    return rotatedPoints
+
 # Rotates an object as arrays of x, y and z using euler angles theta, a list of 3 angles.
 def rotate(x, y, z, theta):
     R = createRotation(theta)
@@ -53,4 +65,4 @@ def rotate(x, y, z, theta):
     yf = np.asarray(yf)
     zf = np.asarray(zf)
     
-    return xf, yf, zf
+    return [xf, yf, zf]
