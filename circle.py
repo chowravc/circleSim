@@ -17,7 +17,17 @@ class circle():
                     if (j - self.y)**2 + (i - self.x)**2 <= self.r**2:
                         img[j][i] = self.color
         return img
-    
+
+    def pixelLocation(self, array):
+
+        cR = circleRange(self.y, self.x, self.r)
+        for j in range(cR[0][0], cR[0][1]):
+            for i in range(cR[1][0], cR[1][1]):
+                if j < len(array) and i < len(array[0]) and j >= 0 and i >= 0:
+                    if (j - self.y)**2 + (i - self.x)**2 <= self.r**2:
+                        array[j][i] = 1
+        return array
+        
     #generates the bounding box for the circle
     def boundingBox(self, height, width):
         
